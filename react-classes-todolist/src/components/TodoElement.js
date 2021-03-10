@@ -1,14 +1,14 @@
-function TodoElement() {
+function TodoElement({title, completed, id}) {
     return (
         <section className="todo-list-element">
-            <section>
-                <input type="checkbox"/>
+            <section id={id}>
+                <input type="checkbox" value={completed}/>
             </section>
             <section>
-                { `text todo` }
+                { title }
             </section>
             <section>
-                {`delete todo`}
+                <button>X</button>
             </section>
         </section>)
 }

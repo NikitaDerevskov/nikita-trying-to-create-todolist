@@ -1,9 +1,10 @@
 import TodoElement from './TodoElement'
 
-function TodoList() {
+function TodoList({todos}) {
     return (
         <article className="todo-list">
-         <TodoElement />
+            { todos.map(({title, completed, id}) =>
+                <TodoElement title={title} completed={completed} id={id} key={id}/>) }
         </article>)
 }
 
