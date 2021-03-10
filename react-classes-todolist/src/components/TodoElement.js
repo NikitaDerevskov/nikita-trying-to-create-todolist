@@ -1,5 +1,4 @@
-function TodoElement({title, completed, id, onChangeTodoStatus, onDeleteTodo}) {
-    return (
+const TodoElement = ({title, completed, id, onChangeTodoStatus, onDeleteTodo}) =>
         <section
             className={`todo-list-element
                         ${completed ? 'todo-element-completed': 'todo-element-uncompleted'}`}>
@@ -13,7 +12,6 @@ function TodoElement({title, completed, id, onChangeTodoStatus, onDeleteTodo}) {
             <section className="todo-list-element-delete">
                 <button onClick={() => onDeleteTodo(id)}>X</button>
             </section>
-        </section>)
-}
+        </section>
 
 export default TodoElement

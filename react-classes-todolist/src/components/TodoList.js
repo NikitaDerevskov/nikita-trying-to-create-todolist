@@ -1,7 +1,6 @@
 import TodoElement from './TodoElement'
 
-function TodoList({todos, onChangeTodoStatus, onDeleteTodo}) {
-    return (
+const TodoList = ({todos, onChangeTodoStatus, onDeleteTodo}) =>
         <article className="todo-list">
             { todos.map(({title, completed, id}) =>
                 <TodoElement
@@ -12,7 +11,6 @@ function TodoList({todos, onChangeTodoStatus, onDeleteTodo}) {
                     onChangeTodoStatus={onChangeTodoStatus}
                     onDeleteTodo={onDeleteTodo}
                 />) }
-        </article>)
-}
+        </article>
 
 export default TodoList
