@@ -13,7 +13,6 @@ class App extends Component {
         }
     }
 
-
     fetchTodos() {
         fetch("https://jsonplaceholder.typicode.com/todos/")
             .then(response => {if (!response.ok) {
@@ -36,7 +35,6 @@ class App extends Component {
         })
         this.setState({todos: changedTodosList})
     }
-
 
     onDeleteTodo = id => {
         const changedTodosList = this.state.todos.filter(todo => todo.id !== id)
