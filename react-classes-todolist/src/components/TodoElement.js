@@ -1,14 +1,17 @@
-function TodoElement({title, completed, id}) {
+function TodoElement({title, completed, id, onChangeTodoStatus, onDeleteTodo}) {
     return (
-        <section className="todo-list-element">
+        <section
+            className={`todo-list-element
+                        ${completed ? 'todo-element-completed': 'todo-element-uncompleted'}`}>
             <section id={id}>
-                <input type="checkbox" value={completed}/>
+                <input type="checkbox" value={completed} onChange={() => onChangeTodoStatus(id)} />
             </section>
-            <section className="todo-list-element-title">
+            <section
+                className="todo-list-element-title">
                 { title }
             </section>
             <section className="todo-list-element-delete">
-                <button>X</button>
+                <button onClick={() => onDeleteTodo(id)}>X</button>
             </section>
         </section>)
 }

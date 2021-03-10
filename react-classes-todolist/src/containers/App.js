@@ -7,12 +7,12 @@ class App extends Component {
         super();
         this.state = {
             todos: [],
-            completedTodos: [],
             hasError: false,
             error: '',
             isPending: true
         }
     }
+
 
     fetchTodos() {
         fetch("https://jsonplaceholder.typicode.com/todos/")
@@ -29,17 +29,36 @@ class App extends Component {
         this.fetchTodos()
     }
 
+    onChangeTodoStatus = id => {
+        const changedTodosList = this.state.todos.map(todo => {
+            if (todo.id === id ) { todo.completed = !todo.completed }
+            return todo
+        })
+        this.setState({todos: changedTodosList})
+    }
+
+
+    onDeleteTodo = id => {
+        const changedTodosList = this.state.todos.filter(todo => todo.id !== id)
+        this.setState({todos: changedTodosList})
+    }
+
     calcTodosPage() {
         const {isPending, hasError, todos, completedTodos} = this.state
         if (isPending) return 'Loading...'
         else if (hasError) return this.state.error
-        else return <TodoList todos={todos} completedTodos={completedTodos}/>
+        else return (
+            <TodoList
+                todos={todos}
+                onChangeTodoStatus={this.onChangeTodoStatus}
+                onDeleteTodo={this.onDeleteTodo}
+            />)
     }
 
     render() {
         return (
             <section className="todos-page">
-                { this.calcTodosPage()}
+                { this.calcTodosPage() }
             </section>)
     }
 }

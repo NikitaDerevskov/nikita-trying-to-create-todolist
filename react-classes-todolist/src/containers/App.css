@@ -19,3 +19,7 @@
 .todo-list-element-delete {
   margin-left: auto;
 }
+
+.todo-element-completed .todo-list-element-title{
+  text-decoration: line-through;
+}
