@@ -4,10 +4,10 @@ function TodoElement({title, completed, id}) {
             <section id={id}>
                 <input type="checkbox" value={completed}/>
             </section>
-            <section>
+            <section className="todo-list-element-title">
                 { title }
             </section>
-            <section>
+            <section className="todo-list-element-delete">
                 <button>X</button>
             </section>
         </section>)

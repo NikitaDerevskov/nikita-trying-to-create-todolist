@@ -1,3 +1,21 @@
-* {
-  font-family: "Al Bayan";
+.todos-page {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.todo-list > .todo-list-element {
+  margin-bottom: 12px;
+}
+
+.todo-list-element {
+  display: flex;
+}
+
+.todo-list-element-title {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.todo-list-element-delete {
+  margin-left: auto;
 }

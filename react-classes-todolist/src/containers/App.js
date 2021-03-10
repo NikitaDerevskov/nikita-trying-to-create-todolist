@@ -39,7 +39,7 @@ class App extends Component {
     render() {
         return (
             <section className="todos-page">
-                { this.calcTodosPage()}}
+                { this.calcTodosPage()}
             </section>)
     }
 }
