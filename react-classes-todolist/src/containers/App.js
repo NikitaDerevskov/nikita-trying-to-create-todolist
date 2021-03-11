@@ -1,6 +1,7 @@
-import './App.css';
 import {Component} from 'react'
 import TodoList from "../components/TodoList";
+import './App.css';
+
 
 class App extends Component {
     constructor() {
