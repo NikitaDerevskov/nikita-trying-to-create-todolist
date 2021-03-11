@@ -6,4 +6,4 @@ TODOLIST technical specification:
 4. Render data
 5. User can create new todo
 6. User can remove todo.
-7. User can completed todo. (render completed todo's list)
+7. User can completed todo.
