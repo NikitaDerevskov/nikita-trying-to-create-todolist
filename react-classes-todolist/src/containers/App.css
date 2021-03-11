@@ -23,3 +23,7 @@
 .todo-element-completed .todo-list-element-title{
   text-decoration: line-through;
 }
+
+.add-todo {
+  margin-bottom: 15px;
+}

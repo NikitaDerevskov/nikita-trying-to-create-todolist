@@ -3,7 +3,7 @@ const TodoElement = ({title, completed, id, onChangeTodoStatus, onDeleteTodo}) =
             className={`todo-list-element
                         ${completed ? 'todo-element-completed': 'todo-element-uncompleted'}`}>
             <section id={id}>
-                <input type="checkbox" value={completed} onChange={() => onChangeTodoStatus(id)} />
+                <input type="checkbox" checked={completed} onChange={() => onChangeTodoStatus(id)} />
             </section>
             <section
                 className="todo-list-element-title">

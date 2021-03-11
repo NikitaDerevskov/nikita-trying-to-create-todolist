@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import TodoList from "../components/TodoList";
+import AddTodo from "../components/AddTodo"
 import './App.css';
 
 
@@ -9,8 +10,9 @@ class App extends Component {
         this.state = {
             todos: [],
             hasError: false,
-            error: '',
-            isPending: true
+            error: "",
+            isPending: true,
+            newTodoTitle: ""
         }
     }
 
@@ -42,16 +44,35 @@ class App extends Component {
         this.setState({todos: changedTodosList})
     }
 
+    newTodoInputHandler = ({target}) => {
+        this.setState({newTodoTitle: target?.value})
+    }
+
+    newTodoButtonHandler = title => {
+        const id = this.state.todos.length + 1
+        const newTodo =  { id, title, completed: false}
+        const todoListWithNewOne = [newTodo, ...this.state.todos]
+        this.setState({todos: todoListWithNewOne})
+    }
+
     calcTodosPage() {
         const {isPending, hasError, todos} = this.state
-        if (isPending) return 'Loading...'
+        if (isPending) return "Loading..."
         else if (hasError) return this.state.error
         else return (
-            <TodoList
-                todos={todos}
-                onChangeTodoStatus={this.onChangeTodoStatus}
-                onDeleteTodo={this.onDeleteTodo}
-            />)
+            <section>
+                <h1>Nikita's todolist</h1>
+                <AddTodo
+                    newTodoInputHandler={this.newTodoInputHandler}
+                    newTodoButtonHandler={this.newTodoButtonHandler}
+                    newTodoTitle={this.state.newTodoTitle}
+                />
+                <TodoList
+                    todos={todos}
+                    onChangeTodoStatus={this.onChangeTodoStatus}
+                    onDeleteTodo={this.onDeleteTodo}
+                />
+            </section>)
     }
 
     render() {
