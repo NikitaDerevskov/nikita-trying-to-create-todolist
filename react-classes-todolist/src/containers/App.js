@@ -42,7 +42,7 @@ class App extends Component {
     }
 
     calcTodosPage() {
-        const {isPending, hasError, todos, completedTodos} = this.state
+        const {isPending, hasError, todos} = this.state
         if (isPending) return 'Loading...'
         else if (hasError) return this.state.error
         else return (
