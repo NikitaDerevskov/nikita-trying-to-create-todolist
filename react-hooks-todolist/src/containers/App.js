@@ -3,7 +3,7 @@ import AddTodo from "../components/AddTodo";
 import TodoList from "../components/TodoList";
 import './App.css'
 
-// TODO bug - if i delete some and add new - we have dubl keys/id 198 and 198 for example
+// TODO bug - if i delete some and add new - we have double keys/id 198 and 198 for example
 function App() {
     // TODO add custom hook
     const [todos, setTodos] = useState([])
