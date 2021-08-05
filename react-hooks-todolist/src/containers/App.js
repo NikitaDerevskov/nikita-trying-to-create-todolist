@@ -23,7 +23,7 @@ function App() {
     }, [])
 
     const addNewTodo = title => {
-        const id = todos.length + 1
+        const id = todos.reduce((acc, x) => x.id > acc ? x.id : acc, 0) + 1
         const newTodo = { id, title, completed: false}
         const newTodosList = [newTodo, ...todos]
         setTodos(newTodosList)
